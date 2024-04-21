@@ -43,6 +43,12 @@ public class TXNMaster {
     @Column(name="Description")
     private String description;
     
+    @Column(name="status")
+    private boolean status;
+    
+    @Column(name="publishedonconnect")
+    private boolean publshedonconnect;
+    
     @Lob
     @Column(name="featureimage")
     private byte[] featuredimage;
@@ -50,11 +56,5 @@ public class TXNMaster {
     @Lob
     @Column(name="pdfimg")
     private byte[] pdfimage;
-    
-    @Column(name="status")
-    private boolean status;
-    
-    @Column(name="publishedonconnect")
-    private boolean publshedonconnect;
-    
+   
 }

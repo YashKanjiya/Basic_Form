@@ -27,7 +27,7 @@ export const Header = () => {
           <div className='mr-2'>
           <Button onClick={()=>{
             setgotolist(true);
-          }}className='bg-vlue-400' variant="contained" startIcon={<AddCircleOutlineIcon />}>
+          }}className='bg-blue-400' variant="contained" startIcon={<AddCircleOutlineIcon />}>
             Add Article
           </Button>
           </div>
@@ -39,3 +39,4 @@ export const Header = () => {
 }
 
 export default Header;
+

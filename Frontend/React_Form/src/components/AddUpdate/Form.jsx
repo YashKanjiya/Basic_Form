@@ -270,13 +270,11 @@ export const Form = (props) => {
       <div className="flex items-center ml-4">
           <div className='mr-2'>
            
-          {/* <Button type="submit" color='success' variant="contained" startIcon={<SaveIcon />}
+          { <Button type="submit" color='success' variant="contained" startIcon={<SaveIcon />}
           >
             Save
-          </Button> */}
-          {
-            flag ? <Buttonicon/>:<Buttonicon/>
-          }
+          </Button> }
+          
 
           </div>
           <div className='mr-4'>
