@@ -38,6 +38,13 @@ public class TXNMasterData{
     
     @JsonProperty("pdfimg")
     private byte[] pdfimage;
+    
+    @JsonProperty("status")
+    private boolean status;
+    
+    @JsonProperty("publishedonconnect")
+    private boolean publshedonconnect;
+    
 
 	public TXNMasterData(TXNMaster txnMaster) 
 	{
@@ -49,6 +56,8 @@ public class TXNMasterData{
 		this.accessCategory=txnMaster.getAccessCategory();
 		this.freeViewExpiry=txnMaster.getFreeViewExpiry();
 		this.description=txnMaster.getDescription();
+		this.status=true;
+		this.publshedonconnect=true;
 		//this.featuredimage=txnMaster.getFeaturedimage();
 		//this.pdfimage=txnMaster.getPdfimage();
 	}

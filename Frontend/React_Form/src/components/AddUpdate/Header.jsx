@@ -5,17 +5,24 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
 
 import { useNavigate } from 'react-router-dom';
+import Form from './Form';
+import Buttonicon from './Buttonicon';
 
 export const Header = () => {
 
+  //navigatition
   const navigate = useNavigate();
-
   const[gotolist,setgotolist]=useState(false);
-
   if(gotolist){
     return navigate("/");
   }
 
+  const handler=()=>{
+    console.log("good");
+  };
+  
+
+  const flag=true;
   return (
     <>
       <div className="flex justify-between w-full h-20 items-center">
@@ -27,9 +34,10 @@ export const Header = () => {
         {/* Buttons */}
         <div className="flex items-center">
           <div className='mr-2'>
-          <Button color='success' variant="contained" startIcon={<SaveIcon />}>
+          <Button onClick={handler} color='success' variant="contained" startIcon={<SaveIcon />}>
             Save
           </Button>
+        
           </div>
           <div className='mr-4'>
           <Button onClick={()=>{
