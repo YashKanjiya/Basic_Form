@@ -1,12 +1,13 @@
 package com.example.Basic_Form.user.service.impl;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.Basic_Form.commonresponse.CommonAPIDataResponse;
 import com.example.Basic_Form.model.TXNMaster;
@@ -21,6 +22,7 @@ import com.example.Basic_Form.model.response.SaveTXNMasterResponse;
 import com.example.Basic_Form.model.response.TXNMasterData;
 import com.example.Basic_Form.user.dao.TXNMasterQueryDao;
 import com.example.Basic_Form.user.service.TXNMasterRepository;
+import com.example.Basic_Form.utils.ImageUtils;
 
 @Service
 public class JPATXNMasterRepository implements TXNMasterRepository {
@@ -37,23 +39,24 @@ public class JPATXNMasterRepository implements TXNMasterRepository {
 			//MultipartFile file1=saveTXNMasterRequest.getPdfimage();
 			//System.out.print("this is"+file);
 			//System.out.print("this is"+file1);
-			txnMaster = TXNMaster.builder()
-					.title(saveTXNMasterRequest.getTitle())
-					.authors(saveTXNMasterRequest.getAuthors()) 
-					.publicUrl(saveTXNMasterRequest.getPublicUrl()) 
-					.articleDate(saveTXNMasterRequest.getArticleDate())				
-					.accessCategory(saveTXNMasterRequest.getAccessCategory())
-					.freeViewExpiry(saveTXNMasterRequest.getFreeViewExpiry())
-					.description(saveTXNMasterRequest.getDescription())
-					//.featuredimage(ImageUtils.compressImage(file.getBytes()))
-					//.pdfimage(ImageUtils.compressImage(file1.getBytes()))
-					.status(true)
-					.publshedonconnect(true)
-					.build();
-		
-				
-				
-				
+			//try {
+				txnMaster = TXNMaster.builder()
+						.title(saveTXNMasterRequest.getTitle())
+						.authors(saveTXNMasterRequest.getAuthors()) 
+						.publicUrl(saveTXNMasterRequest.getPublicUrl()) 
+						.articleDate(saveTXNMasterRequest.getArticleDate())				
+						.accessCategory(saveTXNMasterRequest.getAccessCategory())
+						.freeViewExpiry(saveTXNMasterRequest.getFreeViewExpiry())
+						.description(saveTXNMasterRequest.getDescription())
+						//.featuredimage(ImageUtils.compressImage(file.getBytes()))
+						//.pdfimage(ImageUtils.compressImage(file1.getBytes()))
+						.status(true)
+						.publshedonconnect(true)
+						.build();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 		txnMasterQueryDao.save(txnMaster);
 

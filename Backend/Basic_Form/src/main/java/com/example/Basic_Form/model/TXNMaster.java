@@ -43,13 +43,13 @@ public class TXNMaster {
     @Column(name="Description")
     private String description;
     
-//    @Lob
-//    @Column(name="featureimage")
-//    private byte[] featuredimage;
-//    
-//    @Lob
-//    @Column(name="pdfimg")
-//    private byte[] pdfimage;
+    @Lob
+    @Column(name="featureimage")
+    private byte[] featuredimage;
+    
+    @Lob
+    @Column(name="pdfimg")
+    private byte[] pdfimage;
     
     @Column(name="status")
     private boolean status;

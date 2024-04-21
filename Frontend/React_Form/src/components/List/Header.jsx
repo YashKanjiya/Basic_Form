@@ -1,9 +1,19 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Button from '@mui/material/Button';
 
+import { useNavigate } from 'react-router-dom';
+
 export const Header = () => {
+
+  const navigate = useNavigate();
+  const[gotolist,setgotolist]=useState(false);
+
+  if(gotolist){
+    return navigate("/addupdate");
+  }
+
   return (
     <>
     <div className="flex justify-between w-full h-20 items-center bg-blue-400">
@@ -15,7 +25,9 @@ export const Header = () => {
         {/* Buttons */}
         <div className="flex items-center">
           <div className='mr-2'>
-          <Button className='bg-vlue-400' variant="contained" startIcon={<AddCircleOutlineIcon />}>
+          <Button onClick={()=>{
+            setgotolist(true);
+          }}className='bg-vlue-400' variant="contained" startIcon={<AddCircleOutlineIcon />}>
             Add Article
           </Button>
           </div>
